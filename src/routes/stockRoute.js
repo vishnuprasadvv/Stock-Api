@@ -1,7 +1,8 @@
-const express = require('express');
+import express from 'express';
+import { getStockPrice } from '../controllers/stockController';
 
 const router = express.Router();
 
-router.get('/stock-price', );
+router.get('/stock-price', getStockPrice );
 
-module.exports = router;
+export default router;

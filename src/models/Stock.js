@@ -1,10 +1,6 @@
-const mongoose = require('mongoose');
+import { readStockData } from '../services/googleSheetService.js';
 
-const stockShema = new mongoose.Schema({
-    symbol: {type: String, required: true},
-    date : { type: String, required : true},
-    closingPrice : {type: Number, required: true},
-
-});
-
-module.exports = mongoose.model('Stock', stockShema);
+export const getStockBySymbolAndDate = (symbol, date) => {
+  const stockData = readStockData();
+  return stockData.find((item) => item.Symbol === symbol && item.Date === date);
+};
