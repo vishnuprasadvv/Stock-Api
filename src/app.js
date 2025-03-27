@@ -1,7 +1,7 @@
 import express from 'express';
-import stockRoutes from './routes/stockRoute';
+import stockRoutes from './routes/stockRoute.js';
 import dotenv from 'dotenv';
-import { fetchGoogleSheetData } from './services/googleSheetService';
+import { fetchGoogleSheetData } from './services/googleSheetService.js';
 dotenv.config();
 
 const app = express();
